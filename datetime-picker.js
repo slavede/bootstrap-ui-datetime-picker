@@ -284,7 +284,7 @@
                     var documentClickBind = function (event) {
                         if (scope.isOpen && !(element[0].contains(event.target) || $popup[0].contains(event.target))) {
                             scope.$apply(function () {
-                                scope.close();
+                                scope.close(true);
                             });
                         }
                     };
@@ -374,7 +374,7 @@
                             scope.close();
                     };
 
-                    scope.close = function () {
+                    scope.close = function (bodyClick) {
                         scope.isOpen = false;
 
                         // if enableDate and enableTime are true, reopen the picker in date mode first
