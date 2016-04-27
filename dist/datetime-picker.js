@@ -1,6 +1,6 @@
-// https://github.com/Gillardo/bootstrap-ui-datetime-picker
-// Version: 1.2.6
-// Released: 2015-10-21 
+// https://github.com/slavede/bootstrap-ui-datetime-picker
+// Version: 1.2.7
+// Released: 2016-04-27 
 angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bootstrap.position'])
     .constant('uiDatetimePickerConfig', {
         dateFormat: 'yyyy-MM-dd HH:mm',
@@ -287,7 +287,7 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                     var documentClickBind = function (event) {
                         if (scope.isOpen && !(element[0].contains(event.target) || $popup[0].contains(event.target))) {
                             scope.$apply(function () {
-                                scope.close();
+                                scope.close(true);
                             });
                         }
                     };
@@ -377,7 +377,7 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                             scope.close();
                     };
 
-                    scope.close = function () {
+                    scope.close = function (bodyClick) {
                         scope.isOpen = false;
 
                         // if enableDate and enableTime are true, reopen the picker in date mode first
